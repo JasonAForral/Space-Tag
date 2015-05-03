@@ -12,8 +12,12 @@ public class PlayerController : MonoBehaviour {
 
     private RectTransform crosshair;
 
+    private Rigidbody rigidBody;
+
 	// Use this for initialization
 	void Start () {
+        rigidBody = GetComponent<Rigidbody>();
+
         screenMid = new Vector2(Screen.width * .5f, Screen.height * .5f);
         crosshair = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<RectTransform>();
 	}
@@ -36,7 +40,7 @@ public class PlayerController : MonoBehaviour {
         }
 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("TurnMode"))
         {
             mouseFollow = !mouseFollow;
 
